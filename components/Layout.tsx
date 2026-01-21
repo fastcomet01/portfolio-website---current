@@ -3,10 +3,10 @@ import React from 'react';
 
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
-    <div className="min-h-screen bg-black overflow-hidden flex flex-col selection:bg-neon-pink selection:text-white">
+    <div className="h-screen w-full bg-black overflow-hidden flex flex-col selection:bg-neon-pink selection:text-white">
       {/* 
-        In the immersive one-page mode, the layout is handled internally by Home.tsx 
-        to ensure all elements are within the single viewport. 
+        The outer container is fixed to the viewport height (h-screen) with overflow-hidden.
+        Child pages (Home, About) must handle their own scrolling if content exceeds the viewport.
       */}
       <main className="flex-grow w-full h-full relative">
         {children}

@@ -20,7 +20,7 @@ export const PROJECTS: Project[] = [
     tags: ['AI', 'Automation', 'Governance'],
   },
   {
-    id: 'shopgpt',
+    id: 'biteplan',
     index: '03',
     name: 'BitePlan',
     subtitle: 'AI-enhanced meal planning and nutritional discovery',
@@ -36,22 +36,12 @@ export const PROJECTS: Project[] = [
     tags: ['Link Management', 'Analytics', 'Enterprise'],
   },
   {
-    id: 'aurora',
+    id: 'mathminds',
     index: '05',
-    name: 'Aura',
-    subtitle: 'Motion & interaction design',
-    link: '#',
-    tags: ['Portfolio', 'Animation', 'UI/UX'],
-    isInternal: true,
-  },
-  {
-    id: 'hydra',
-    index: '06',
-    name: 'Hydro',
-    subtitle: 'Conversational product UX',
-    link: '#',
-    tags: ['AI', 'SaaS', 'Product'],
-    isInternal: true,
+    name: 'MathMinds Studio',
+    subtitle: 'AI-powered mathematics learning and visualization platform',
+    link: 'https://mathminds-studio-126122738880.us-west1.run.app',
+    tags: ['AI', 'Education', 'Mathematics'],
   },
 ];
 
@@ -65,8 +55,8 @@ export const FAQ_ITEMS: FAQItem[] = [
     answer: "I typically respond to emails within 24 hours during business days. For urgent matters, feel free to call or text."
   },
   {
-    question: "Do you work with international clients?",
-    answer: "Absolutely! I work with clients worldwide and am comfortable with different time zones and remote collaboration."
+    question: "Are you available for collaboration and other ideas?",
+    answer: "Absolutely! Contact me about your interest."
   },
   {
     question: "What information should I include in my initial contact?",
