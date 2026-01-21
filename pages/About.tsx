@@ -84,10 +84,10 @@ const About: React.FC = () => {
           <div className="lg:col-span-8 space-y-32">
             <section className="space-y-8 text-lg md:text-xl text-secondary-text leading-relaxed font-light">
               <p className="border-l-2 border-neon-cyan/20 pl-6 md:pl-8">
-                I'm currently a university student pursuing <span className="text-white font-medium">Computer Systems Engineering</span>, focusing on the intersection of deep logic and fluid aesthetics.
+                I’m a <span className="text-white font-medium">Computer Systems Engineering</span> student mainly focusing on AI Engineering and Product Development. I have a strong academic background in algorithms and systems design with a practical interest for clean UI/UX design.
               </p>
               <p className="border-l-2 border-neon-pink/20 pl-6 md:pl-8">
-                My methodology is rooted in the belief that high performance and visual excellence are not mutually exclusive—they are the two hemispheres of successful product synthesis.
+                Driven by an <span className="text-white">entrepreneurial mindset</span>, I aim to bridge the gap between technical innovation and market needs, including using AI-driven solutions that are not only mathematically robust but also commercially viable and delightful to use.
               </p>
             </section>
 
