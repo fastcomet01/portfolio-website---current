@@ -1,6 +1,5 @@
-
 import React, { useState } from 'react';
-import { PROJECTS, FAQ_ITEMS, SERVICES, TECHNICAL_SKILLS } from '../constants';
+import { PROJECTS, FAQ_ITEMS, SERVICES } from '../constants';
 import LiquidBackground from '../components/LiquidBackground';
 
 const Home: React.FC = () => {
@@ -15,42 +14,42 @@ const Home: React.FC = () => {
       {/* Futuristic & Elegant Header / Brand Identity with Background Shield */}
       <header className="fixed top-0 left-0 w-full z-40 flex flex-col pointer-events-none">
         {/* The Background Shield: Prevents content clashing while keeping the HUD feel */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black via-black/90 to-transparent h-40 md:h-52 -z-10 pointer-events-none opacity-95"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black via-black/95 to-transparent h-32 md:h-52 -z-10 pointer-events-none"></div>
         
-        <div className="p-6 md:p-10 flex justify-between items-start w-full">
-          <div className="flex flex-col pointer-events-auto group">
-            <div className="flex items-center gap-5">
-               {/* Logo / HUD Marker */}
-               <div className="relative w-8 h-8 flex items-center justify-center">
+        <div className="p-4 md:p-10 flex justify-between items-start w-full gap-2">
+          <div className="flex flex-col pointer-events-auto group min-w-0">
+            <div className="flex items-center gap-4 md:gap-6">
+               {/* Logo / HUD Marker - Bolder Presence */}
+               <div className="relative w-10 h-10 md:w-14 md:h-14 flex-shrink-0 flex items-center justify-center">
                   <div className="absolute inset-0 border border-white/10 group-hover:border-neon-cyan/50 transition-colors duration-500"></div>
                   <div className="absolute top-0 left-0 w-full h-[1px] bg-neon-cyan/50 animate-[scan_2s_linear_infinite]"></div>
-                  <span className="relative z-10 text-[9px] font-sans font-light tracking-tighter text-white">IS</span>
+                  <span className="relative z-10 text-[11px] md:text-[14px] font-sans font-light tracking-tighter text-white">IS</span>
                </div>
                
-               <div className="flex flex-col">
-                  <div className="flex items-center gap-3">
-                    <h1 className="text-lg md:text-xl font-sans font-extralight tracking-[0.4em] text-white uppercase group-hover:tracking-[0.45em] transition-all duration-700">
+               <div className="flex flex-col min-w-0">
+                  <div className="flex items-center gap-2 md:gap-3">
+                    <h1 className="text-sm md:text-xl font-sans font-extralight tracking-[0.15em] md:tracking-[0.4em] text-white uppercase group-hover:tracking-[0.2em] md:group-hover:tracking-[0.45em] transition-all duration-700 truncate">
                       Ivan Smirnov
                     </h1>
-                    <div className="w-1 h-1 rounded-full bg-neon-cyan animate-pulse shadow-[0_0_8px_rgba(0,245,212,0.8)]"></div>
+                    <div className="w-1 h-1 flex-shrink-0 rounded-full bg-neon-cyan animate-pulse shadow-[0_0_8px_rgba(0,245,212,0.8)]"></div>
                   </div>
-                  <div className="flex items-center gap-3 mt-1.5">
-                     <span className="text-[6px] font-mono tracking-[0.5em] text-neon-cyan uppercase">STATUS: ACTIVE</span>
-                     <span className="text-[6px] font-mono tracking-[0.5em] text-white/20 uppercase">LOC: LON_GMT // v2.0.5</span>
+                  <div className="flex items-center gap-3 mt-1 opacity-60 md:opacity-100">
+                     <span className="text-[5px] md:text-[6px] font-mono tracking-[0.3em] md:tracking-[0.5em] text-neon-cyan uppercase whitespace-nowrap">STATUS: ACTIVE</span>
+                     <span className="text-[5px] md:text-[6px] font-mono tracking-[0.3em] md:tracking-[0.5em] text-white/20 uppercase whitespace-nowrap hidden xs:inline">LOC: LON_GMT</span>
                   </div>
                </div>
             </div>
           </div>
 
-          <nav className="flex gap-4 md:gap-8 pointer-events-auto items-center pt-2">
+          <nav className="flex flex-shrink-0 pointer-events-auto items-center pt-2 md:pt-3">
             <button 
               onClick={() => setShowAbout(!showAbout)}
-              className={`group relative px-6 py-2 overflow-hidden transition-all ${showAbout ? 'text-neon-pink' : 'text-white/60 hover:text-white'}`}
+              className={`group relative px-4 md:px-10 py-2.5 md:py-4 overflow-hidden transition-all ${showAbout ? 'text-neon-pink' : 'text-white/60 hover:text-white'}`}
             >
-              <span className="relative z-10 text-[9px] md:text-[10px] tracking-[0.6em] font-light uppercase">
+              <span className="relative z-10 text-[11px] md:text-[14px] tracking-[0.1em] md:tracking-[0.5em] font-semibold uppercase whitespace-nowrap">
                 {showAbout ? '[ CLOSE ]' : '[ ABOUT ]'}
               </span>
-              <div className={`absolute bottom-0 left-0 h-[1px] bg-current transition-all duration-500 ${showAbout ? 'w-full' : 'w-0 group-hover:w-full'}`}></div>
+              <div className={`absolute bottom-0 left-0 h-[2px] bg-current transition-all duration-500 ${showAbout ? 'w-full' : 'w-0 group-hover:w-full'}`}></div>
             </button>
           </nav>
         </div>
@@ -72,7 +71,7 @@ const Home: React.FC = () => {
 
         {/* Project Grid */}
         <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {PROJECTS.map((project, idx) => (
+          {PROJECTS.map((project) => (
             <a
               key={project.id}
               href={project.link}
@@ -123,10 +122,10 @@ const Home: React.FC = () => {
           <div className="group relative block bg-zinc-900/40 border border-white/5 p-8 md:p-12 h-full flex flex-col justify-center items-center text-center min-h-[360px]">
              <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,46,110,0.05)_0%,transparent_70%)]"></div>
              <span className="relative z-10 text-[10px] tracking-[0.6em] text-neon-pink font-bold uppercase mb-6">Inquiry_Port</span>
-             <h3 className="relative z-10 text-2xl font-serif font-light text-white/80 mb-8 uppercase tracking-widest leading-snug">Available for next-gen collaborations</h3>
+             <h3 className="relative z-10 text-xl md:text-2xl font-serif font-light text-white/80 mb-8 uppercase tracking-widest leading-snug">Available for next-gen collaborations</h3>
              <button 
                 onClick={() => setShowAbout(true)}
-                className="relative z-10 px-10 py-4 bg-white text-black font-bold text-[10px] tracking-[0.4em] uppercase hover:bg-neon-cyan hover:text-black transition-all hover:scale-105"
+                className="relative z-10 px-8 md:px-10 py-4 bg-white text-black font-bold text-[10px] tracking-[0.4em] uppercase hover:bg-neon-cyan hover:text-black transition-all hover:scale-105"
              >
                 ESTABLISH_LINK
              </button>
@@ -145,9 +144,9 @@ const Home: React.FC = () => {
                   onClick={() => setShowAbout(false)}
                   className="flex items-center gap-4 group text-white hover:text-neon-cyan transition-all"
                 >
-                  <div className="relative w-12 h-12 flex items-center justify-center">
+                  <div className="relative w-10 h-10 md:w-12 md:h-12 flex items-center justify-center">
                     <div className="absolute -inset-1 border border-white/10 group-hover:border-neon-cyan/50 transition-colors"></div>
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="relative z-10 w-6 h-6 transform group-hover:-translate-x-1 transition-transform">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="relative z-10 w-5 h-5 md:w-6 md:h-6 transform group-hover:-translate-x-1 transition-transform">
                       <path d="M20 12H4M4 12L10 18M4 12L10 6" stroke="currentColor" strokeWidth="1.5"/>
                     </svg>
                   </div>
@@ -160,9 +159,10 @@ const Home: React.FC = () => {
              </div>
 
              <div className="p-6 md:p-16 overflow-y-auto space-y-24 scroll-smooth">
-                {/* Intro Section */}
+                {/* Intro Section - Updated Order: Contacts First on Mobile */}
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
-                  <div className="lg:col-span-5 order-2 lg:order-1 space-y-12">
+                  {/* Contact Nodes - order-1 ensures it goes first on mobile */}
+                  <div className="lg:col-span-5 order-1 space-y-12">
                      <section className="space-y-6">
                       <h3 className="text-[10px] uppercase tracking-[0.6em] text-neon-cyan font-bold border-b border-white/5 pb-4">Contact_Nodes</h3>
                       <div className="grid gap-2">
@@ -181,12 +181,13 @@ const Home: React.FC = () => {
                     </section>
                   </div>
 
-                  <div className="lg:col-span-7 order-1 lg:order-2 space-y-10">
+                  {/* Bio Description - order-2 ensures it goes second on mobile */}
+                  <div className="lg:col-span-7 order-2 space-y-10">
                     <div className="text-lg md:text-xl text-white/60 leading-relaxed font-light space-y-8">
-                      <p className="border-l border-neon-cyan/40 pl-8 py-2">
+                      <p className="border-l border-neon-cyan/40 pl-6 md:pl-8 py-2">
                         I’m a <span className="text-white font-medium">Computer Systems Engineering</span> student mainly focusing on AI Engineering and Product Development. I have a strong academic background in algorithms and systems design with a practical interest for clean UI/UX design.
                       </p>
-                      <p className="border-l border-neon-pink/40 pl-8 py-2">
+                      <p className="border-l border-neon-pink/40 pl-6 md:pl-8 py-2">
                         Driven by an <span className="text-white">entrepreneurial mindset</span>, I aim to bridge the gap between technical innovation and market needs, including using AI-driven solutions that are not only mathematically robust but also commercially viable and delightful to use.
                       </p>
                     </div>
@@ -199,29 +200,11 @@ const Home: React.FC = () => {
                       <h3 className="text-[10px] uppercase tracking-[0.6em] text-neon-pink font-bold border-b border-white/5 pb-4 flex-grow">Technical_Stack_Inventory</h3>
                    </div>
                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-12 gap-y-16">
-                      <SkillGroup title="Programming Languages" skills={['Python', 'JavaScript', 'TypeScript', 'SQL', 'Bash']} />
-                      <SkillGroup title="Frontend & Frameworks" skills={['React', 'Vue', 'Node.js']} />
-                      <SkillGroup title="ML & AI" skills={['PyTorch', 'TensorFlow', 'Hugging Face Transformers', 'n8n', 'LangChain', 'Claude Code']} />
-                      <SkillGroup title="Data & Storage" skills={['PostgreSQL', 'MySQL', 'MongoDB', 'Redis', 'Amazon S3']} />
-                      <SkillGroup title="MLOps & DevOps" skills={['Docker', 'Kubernetes', 'GitLab CI']} />
-                      <SkillGroup title="Cloud Platforms" skills={['AWS', 'Google Cloud Platform', 'Microsoft Azure']} />
-                      <SkillGroup title="Integration & APIs" skills={['REST APIs', 'gRPC', 'WebSockets']} />
+                      <SkillGroup title="Languages" skills={['Python', 'JavaScript', 'TypeScript', 'SQL', 'Bash']} />
+                      <SkillGroup title="Frameworks" skills={['React', 'Vue', 'Node.js']} />
+                      <SkillGroup title="ML & AI" skills={['PyTorch', 'TensorFlow', 'n8n', 'LangChain', 'Claude Code']} />
+                      <SkillGroup title="Data & Infrastructure" skills={['PostgreSQL', 'Docker', 'AWS', 'GCP']} />
                    </div>
-                </section>
-
-                {/* FAQ */}
-                <section className="space-y-12">
-                  <h3 className="text-[10px] uppercase tracking-[0.6em] text-white/20 font-bold border-b border-white/5 pb-4">Knowledge_Base</h3>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-                    {FAQ_ITEMS.map((item, idx) => (
-                      <div key={idx} className="space-y-4">
-                        <h4 className="text-white font-bold tracking-tight text-xl">{item.question}</h4>
-                        <p className="text-sm text-white/40 leading-relaxed font-light">
-                          {item.answer}
-                        </p>
-                      </div>
-                    ))}
-                  </div>
                 </section>
 
                 <div className="pt-20 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 pb-4 opacity-30">
@@ -248,9 +231,9 @@ const Home: React.FC = () => {
              ))}
            </div>
         </div>
-        <div className="flex items-center gap-12 text-[8px] font-mono text-white/20 uppercase tracking-[0.4em]">
+        <div className="flex items-center gap-8 md:gap-12 text-[8px] font-mono text-white/20 uppercase tracking-[0.1em] md:tracking-[0.4em]">
            <span className="hover:text-white transition-colors cursor-default">Privacy_Encrypted</span>
-           <span className="hover:text-white transition-colors cursor-default">Terms_Verified</span>
+           <span className="hover:text-white transition-colors cursor-default hidden xs:inline">Terms_Verified</span>
            <span className="text-white/40">© 2025_FC_STD</span>
         </div>
       </footer>
